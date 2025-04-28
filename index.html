@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XO Game - Player vs AI</title>
   <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .info {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
     .start-btn {
       margin-top: 20px;
       padding: 12px 24px;
@@ -25,14 +58,14 @@
     }
   </style>
 
-  <!-- AdSense Script (for banner) -->
+  <!-- AdSense Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179267562414462"
     crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-  <!-- 🎯 Banner Ad at Top -->
+  <!-- Banner Ad -->
   <div class="ad-container">
     <ins class="adsbygoogle"
       style="display:block"
@@ -50,19 +83,78 @@
   <div class="board" id="board"></div>
   <button class="start-btn" onclick="resetGame()">Start New Game</button>
 
-  <!-- Script for Interstitial, Rewarded, Native, App Open Placeholder -->
   <script>
-    // IDs for reference:
-    const INTERSTITIAL_AD_ID = 'ca-app-pub-5179267562414462/2129021617';
-    const REWARDED_AD_ID = 'ca-app-pub-5179267562414462/4013190172';
-    const NATIVE_ADVANCED_AD_ID = 'ca-app-pub-5179267562414462/3737007940';
-    const APP_OPEN_AD_ID = 'ca-app-pub-5179267562414462/2423926272';
+    const board = document.getElementById('board');
+    const info = document.getElementById('info');
+    let currentPlayer = 'X';
+    let cells = [];
 
-    // NOTE: Ye IDs abhi sirf variables mein store kiye hain.
-    // Web par in ads ko dikhane ke liye proper SDK/API chahiye hota hai.
-    // Abhi filhaal Banner ad hi active hai.
+    function createBoard() {
+      board.innerHTML = '';
+      cells = [];
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', () => makeMove(i));
+        board.appendChild(cell);
+        cells.push(cell);
+      }
+    }
+
+    function makeMove(index) {
+      if (cells[index].textContent !== '') return;
+      cells[index].textContent = currentPlayer;
+      if (checkWinner()) {
+        info.textContent = `${currentPlayer} wins!`;
+        disableBoard();
+        return;
+      }
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      info.textContent = `Your turn (${currentPlayer})`;
+      if (currentPlayer === 'O') {
+        setTimeout(computerMove, 500);
+      }
+    }
+
+    function computerMove() {
+      let emptyCells = cells.filter(cell => cell.textContent === '');
+      if (emptyCells.length === 0) return;
+      let randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+      randomCell.textContent = currentPlayer;
+      if (checkWinner()) {
+        info.textContent = `${currentPlayer} wins!`;
+        disableBoard();
+        return;
+      }
+      currentPlayer = 'X';
+      info.textContent = `Your turn (${currentPlayer})`;
+    }
+
+    function checkWinner() {
+      const winningCombos = [
+        [0,1,2], [3,4,5], [6,7,8],
+        [0,3,6], [1,4,7], [2,5,8],
+        [0,4,8], [2,4,6]
+      ];
+      return winningCombos.some(combo => {
+        return combo.every(index => cells[index].textContent === currentPlayer);
+      });
+    }
+
+    function disableBoard() {
+      cells.forEach(cell => {
+        cell.removeEventListener('click', makeMove);
+      });
+    }
+
+    function resetGame() {
+      currentPlayer = 'X';
+      info.textContent = `Your turn (${currentPlayer})`;
+      createBoard();
+    }
+
+    createBoard();
   </script>
 
-  <script src="script.js"></script>
 </body>
 </html>
