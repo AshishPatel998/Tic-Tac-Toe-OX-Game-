@@ -96,6 +96,104 @@
       animation: fadeIn 2s ease-out;
     }
 
+    .start-btn <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XO Game - Player vs AI</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      color: #fff;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 12px;
+      justify-content: center;
+      margin: 30px 0;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      background: #ffffffcc;
+      border-radius: 12px;
+      border: 2px solid #aaa;
+      font-size: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .cell:hover {
+      background-color: #ffeaa7;
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      background: #00b894;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease-out;
+    }
+
+    button:hover {
+      background: #00cec9;
+      transform: scale(1.1);
+    }
+
+    .info {
+      font-size: 1.5rem;
+      color: #fff;
+      background: #2d3436;
+      padding: 12px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-out;
+    }
+
     .start-btn {
       margin-top: 20px;
       padding: 12px 24px;
@@ -129,8 +227,58 @@
   <div class="ad-container">
     <ins class="adsbygoogle"
       style="display:block"
-      data-ad-client="ca-pub-8303489454573253"
-      data-ad-slot="7311834603"
+      data-ad-client="ca-pub-
+      data-ad-slot=
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <h1>XO Game - Player vs AI</h1>
+  <div class="info" id="info">Your turn (X)</div>
+  <div class="board" id="board"></div>
+  <button class="start-btn" onclick="resetGame()">Start New Game</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+{
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      background: #ff6347;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background: #ff4f3b;
+      transform: scale(1.1);
+    }
+
+    /* Optional: Space for ad */
+    .ad-container {
+      margin: 20px 0;
+    }
+  </style>
+
+  <!-- AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8303489454573253"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- 🎯 Ad Banner (visible background-like at top) -->
+  <div class="ad-container">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-
+      data-ad-slot=
       data-ad-format="auto"
       data-full-width-responsive="true"></ins>
     <script>
