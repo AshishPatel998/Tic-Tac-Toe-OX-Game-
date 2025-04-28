@@ -1,69 +1,12 @@
-<style>
-      border: none;
-      border-radius: 10px;
-      transition: background 0.3s ease;
-    }
-    .start-btn:hover {
-      background: #ff4f3b;
-      transform: scale(1.1);
-    }
-    /* Optional: Space for ad */
-    .ad-container {
-      margin: 20px 0;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XO Game - Player vs AI</title>
 
-<!-- AdSense Script -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179267562414462"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-
-<!-- 🎯 Banner Ad Banner (visible background-like at top) -->
-<div class="ad-container">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-5179267562414462"
-      data-ad-slot="8886242902"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-
-<h1>XO Game - Player vs AI</h1>
-<div class="info" id="info">Your turn (X)</div>
-<div class="board" id="board"></div>
-<button class="start-btn" onclick="resetGame()">Start New Game</button>
-
-<script src="script.js"></script>
-
-<!-- Future use Interstitial Ad -->
-<!-- 
-<script>
-    // Interstitial Ad ID: ca-app-pub-5179267562414462/2129021617
-</script> 
--->
-
-<!-- Future use Rewarded Ad -->
-<!-- 
-<script>
-    // Rewarded Ad ID: ca-app-pub-5179267562414462/4013190172
-</script> 
--->
-
-<!-- Future use App Open Ad -->
-<!-- 
-<script>
-    // App Open Ad ID: ca-app-pub-5179267562414462/2423926272
-</script> 
--->
-
-</body>
-</html>
-
-<style>
+  <style>
+    .start-btn {
       margin-top: 20px;
       padding: 12px 24px;
       font-size: 18px;
@@ -78,20 +21,42 @@
       background: #ff4f3b;
       transform: scale(1.1);
     }
-    /* Optional: Space for ad */
     .ad-container {
       margin: 20px 0;
     }
-</style>
+    .info {
+      margin: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 5px;
+      margin: 20px auto;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      background: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 
-<!-- AdSense Script Again (duplicate) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179267562414462"
-     crossorigin="anonymous"></script>
+  <!-- AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179267562414462"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-<!-- 🎯 Banner Ad Again (duplicate) -->
-<div class="ad-container">
+  <!-- Banner Ad -->
+  <div class="ad-container">
     <ins class="adsbygoogle"
       style="display:block"
       data-ad-client="ca-pub-5179267562414462"
@@ -101,35 +66,23 @@
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-</div>
+  </div>
 
-<h1>XO Game - Player vs AI</h1>
-<div class="info" id="info">Your turn (X)</div>
-<div class="board" id="board"></div>
-<button class="start-btn" onclick="resetGame()">Start New Game</button>
+  <h1>XO Game - Player vs AI</h1>
+  <div class="info" id="info">Your turn (X)</div>
+  <div class="board" id="board"></div>
+  <button class="start-btn" onclick="resetGame()">Start New Game</button>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
-<!-- Future use Interstitial Ad (again) -->
-<!-- 
-<script>
-    // Interstitial Ad ID: ca-app-pub-5179267562414462/2129021617
-</script> 
--->
+  <!-- Future Interstitial Ad (for reference) -->
+  <!-- Interstitial Ad ID: ca-app-pub-5179267562414462/2129021617 -->
 
-<!-- Future use Rewarded Ad (again) -->
-<!-- 
-<script>
-    // Rewarded Ad ID: ca-app-pub-5179267562414462/4013190172
-</script> 
--->
+  <!-- Future Rewarded Ad (for reference) -->
+  <!-- Rewarded Ad ID: ca-app-pub-5179267562414462/4013190172 -->
 
-<!-- Future use App Open Ad (again) -->
-<!-- 
-<script>
-    // App Open Ad ID: ca-app-pub-5179267562414462/2423926272
-</script> 
--->
+  <!-- Future App Open Ad (for reference) -->
+  <!-- App Open Ad ID: ca-app-pub-5179267562414462/2423926272 -->
 
 </body>
 </html>
