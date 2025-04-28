@@ -1,70 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XO Game - Player vs AI</title>
-  <style>
+<style>
     .start-btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      cursor: pointer;
-      background: #ff6347;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      transition: background 0.3s ease;
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 18px;
+        cursor: pointer;
+        background: #ff6347;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transition: background 0.3s ease;
     }
     .start-btn:hover {
-      background: #ff4f3b;
-      transform: scale(1.1);
+        background: #ff4f3b;
+        transform: scale(1.1);
     }
     .ad-container {
-      margin: 20px 0;
+        margin: 20px 0;
     }
-  </style>
+</style>
 
-  <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5179267562414462"
+<!-- AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8303489454573253"
     crossorigin="anonymous"></script>
-
 </head>
 <body>
 
-  <!-- 🎯 Banner Ad -->
-  <div class="ad-container">
+<!-- 🎯 Ad Banner (visible background-like at top) -->
+<div class="ad-container">
     <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-5179267562414462"
-      data-ad-slot="8886242902"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
+        style="display:block"
+        data-ad-client="ca-pub-"
+        data-ad-slot=
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-  </div>
+</div>
 
-  <h1>XO Game - Player vs AI</h1>
-  <div class="info" id="info">Your turn (X)</div>
-  <div class="board" id="board"></div>
-  <button class="start-btn" onclick="resetGame()">Start New Game</button>
+<h1>XO Game - Player vs AI</h1>
+<div class="info" id="info">Your turn (X)</div>
+<div class="board" id="board"></div>
+<button class="start-btn" onclick="resetGame()">Start New Game</button>
 
-  <!-- AdMob IDs -->
-  <script>
-    // Banner Ad ID
-    const bannerAdID = 'ca-app-pub-5179267562414462/8886242902';
-    // Interstitial Ad ID
-    const interstitialAdID = 'ca-app-pub-5179267562414462/2129021617';
-    // Rewarded Ad ID
-    const rewardedAdID = 'ca-app-pub-5179267562414462/4013190172';
-    // Native Ad ID
-    const nativeAdID = 'ca-app-pub-5179267562414462/3737007940';
-    // App Open Ad ID
-    const appOpenAdID = 'ca-app-pub-5179267562414462/2423926272';
-  </script>
-
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
